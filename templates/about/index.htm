@@ -1,0 +1,303 @@
+{% extends 'base.htm' %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    {% block head %}
+    <title>Calco | About</title>
+    <link rel="stylesheet" href="{% static 'about/style.css?version=2' %}" />
+    <style>
+      .left {
+        position: absolute;
+        width: 435px;
+        height: 360px;
+        left: 346px;
+        top: 61px;
+
+        background: linear-gradient(
+          180deg,
+          #f18928 0%,
+          rgba(241, 137, 40, 0.75) 100%
+        );
+        border-radius: 50px;
+      }
+
+      .right {
+        position: absolute;
+        width: 435px;
+        height: 360px;
+        left: 800px;
+        top: 61px;
+
+        background: linear-gradient(
+          180deg,
+          #f18928 0%,
+          rgba(241, 137, 40, 0.75) 100%
+        );
+        border-radius: 50px;
+      }
+
+      .right-text {
+        line-height: 1.4em;
+      }
+
+      .bottom {
+        position: absolute;
+        width: 890px;
+        height: 301px;
+        left: 346px;
+        top: 512px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+
+        background: linear-gradient(
+          180deg,
+          #f18928 0%,
+          rgba(241, 137, 40, 0.75) 100%
+        );
+        border-radius: 50px;
+      }
+
+      .img {
+        width: 100px;
+      }
+
+      .business-title {
+        grid-row: 2 / span 1;
+      }
+
+      .productive-title {
+        grid-column: 2 / span 1;
+        grid-column: 2 / span 1;
+      }
+
+      .quick-title {
+        grid-column: 3 / span 1;
+        grid-row: 2 / span 1;
+      }
+
+      .quick {
+        grid-column: 3 / span 1;
+        grid-row: 1 / span 1;
+      }
+
+      .business-title,
+      .productive-title,
+      .quick-title {
+        margin-bottom: 40px;
+        color: #fff;
+        font-size: 32px;
+        font-weight: 400;
+      }
+
+      .left,
+      .right {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+      }
+
+      .left-text,
+      .right-text {
+        margin: 0px 20px 0px 20px;
+        text-align: center;
+        line-height: 2em;
+        color: #fff;
+      }
+
+      .foot {
+        position: absolute;
+        width: 100%;
+        height: 20vh;
+        background-color: #363634;
+        top: 920px;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        color: white;
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: 1240px) {
+        .left {
+          position: absolute;
+          transition: ease-in 300ms;
+          width: 355px;
+          height: 280px;
+          left: 346px;
+          top: 61px;
+
+          background: linear-gradient(
+            180deg,
+            #f18928 0%,
+            rgba(241, 137, 40, 0.75) 100%
+          );
+          border-radius: 50px;
+        }
+
+        .right {
+          position: absolute;
+          transition: ease-in 300ms;
+          width: 355px;
+          height: 280px;
+          left: 725px;
+          top: 61px;
+
+          background: linear-gradient(
+            180deg,
+            #f18928 0%,
+            rgba(241, 137, 40, 0.75) 100%
+          );
+          border-radius: 50px;
+        }
+
+        .bottom {
+          position: absolute;
+          width: 740px;
+          transition: 300ms ease-in;
+          height: 301px;
+          left: 346px;
+          top: 512px;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          align-items: center;
+          justify-items: center;
+
+          background: linear-gradient(
+            180deg,
+            #f18928 0%,
+            rgba(241, 137, 40, 0.75) 100%
+          );
+          border-radius: 50px;
+        }
+
+        .business-title,
+        .productive-title,
+        .quick-title {
+          font-size: 20px;
+        }
+      }
+
+      @media screen and (max-width: 1050px) {
+        .left {
+          position: absolute;
+          transition: ease-in 300ms;
+          width: 540px;
+          height: 280px;
+          left: 346px;
+          top: 61px;
+
+          background: linear-gradient(
+            180deg,
+            #f18928 0%,
+            rgba(241, 137, 40, 0.75) 100%
+          );
+          border-radius: 50px;
+        }
+
+        .right {
+          position: absolute;
+          transition: ease-in 300ms;
+          width: 540px;
+          height: 280px;
+          left: 346px;
+          top: 350px;
+
+          background: linear-gradient(
+            180deg,
+            #f18928 0%,
+            rgba(241, 137, 40, 0.75) 100%
+          );
+          border-radius: 50px;
+        }
+
+        .bottom {
+          position: absolute;
+          width: 540px;
+          transition: 300ms ease-in;
+          height: 301px;
+          left: 346px;
+          top: 662px;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-rows: 1fr 1fr;
+          align-items: center;
+          justify-items: center;
+
+          background: linear-gradient(
+            180deg,
+            #f18928 0%,
+            rgba(241, 137, 40, 0.75) 100%
+          );
+          border-radius: 50px;
+        }
+
+        .business-title,
+        .productive-title,
+        .quick-title {
+          font-size: 20px;
+        }
+
+        .foot {
+          display: none;
+        }
+      }
+    </style>
+    {% endblock %}
+  </head>
+  <body>
+    {% block content %}
+    <div class="container">
+      <div class="sections">
+        <div class="left">
+          <p class="left-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae,
+            laudantium! Est delectus optio consequuntur a, alias modi illo in
+            quasi totam voluptas adipisci cumque sed odio inventore hic eligendi
+            sunt!
+          </p>
+        </div>
+
+        <div class="right">
+          <p class="right-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste
+            perferendis excepturi, quaerat nisi rem nemo dicta magni earum
+            impedit!
+          </p>
+        </div>
+
+        <div class="bottom">
+          <img
+            src="{% static 'imgs/business.svg' %}"
+            alt=""
+            class="business img"
+          />
+          <h3 class="business-title">Business</h3>
+
+          <img
+            src="{% static 'imgs/productive.svg' %}"
+            alt=""
+            class="productive img"
+          />
+          <h3 class="productive-title">Productive</h3>
+
+          <img src="{% static 'imgs/quick.svg' %}" alt="" class="quick img" />
+          <h3 class="quick-title">Quick</h3>
+        </div>
+
+        <footer class="foot">
+          <p class="copy">&copy; Bilal Uddin 2020</p>
+        </footer>
+      </div>
+    </div>
+
+    <script src="{% static 'about/app.js' %}"></script>
+    {% endblock %}
+  </body>
+</html>

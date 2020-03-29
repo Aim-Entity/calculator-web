@@ -1,0 +1,99 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+
+aside {
+  position: absolute;
+  width: 217px;
+  height: 1024px;
+  left: 0px;
+  top: 0px;
+
+  background: linear-gradient(
+    180deg,
+    #1c4dcb 13.28%,
+    rgba(35, 168, 210, 0.78) 100%
+  );
+}
+
+.base-title {
+  position: absolute;
+  width: 190px;
+  height: 81px;
+  left: 13px;
+  top: 21px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 96px;
+  font-weight: 400;
+
+  color: #000;
+}
+
+.base-line {
+  position: absolute;
+  width: 177px;
+  height: 0px;
+  left: 19px;
+  top: 107px;
+
+  border: 1px solid #ffffff;
+}
+
+.about {
+  position: absolute;
+  width: 79px;
+  height: 33px;
+  left: 68px;
+  top: 255px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 36px;
+
+  color: #ffffff;
+}
+
+.calculator {
+  position: absolute;
+  width: 139px;
+  height: 33px;
+  left: 39px;
+  top: 439px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 36px;
+
+  color: #ffffff;
+}
+
+.compound {
+  position: absolute;
+  width: 139px;
+  height: 33px;
+  left: 39px;
+  top: 623px;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 36px;
+
+  color: #ffffff;
+}
+
+.base-a {
+  text-decoration: none;
+}

@@ -1,0 +1,177 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    {% block head %}
+    <title>CHANGE</title>
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'base.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,400i,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: poppins;
+      }
+
+      aside {
+        position: absolute;
+        width: 217px;
+        height: 1024px;
+        left: 0px;
+        top: 0px;
+
+        background: linear-gradient(
+          180deg,
+          #1c4dcb 13.28%,
+          rgba(35, 168, 210, 0.78) 100%
+        );
+      }
+
+      .base-title {
+        position: absolute;
+        width: 190px;
+        height: 81px;
+        left: 13px;
+        top: 21px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 64px;
+        line-height: 96px;
+        font-weight: 400;
+
+        color: white;
+      }
+
+      .base-line {
+        position: absolute;
+        width: 177px;
+        height: 0px;
+        left: 19px;
+        top: 107px;
+
+        border: 1px solid #ffffff;
+      }
+
+      .about {
+        position: absolute;
+        width: 79px;
+        height: 33px;
+        left: 68px;
+        top: 255px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 36px;
+
+        color: #ffffff;
+      }
+
+      .calculator {
+        position: absolute;
+        width: 139px;
+        height: 33px;
+        left: 39px;
+        top: 439px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 36px;
+
+        color: #ffffff;
+      }
+
+      .compound {
+        position: absolute;
+        width: 139px;
+        height: 33px;
+        left: 39px;
+        top: 623px;
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 36px;
+
+        color: #ffffff;
+      }
+
+      .base-a {
+        text-decoration: none;
+      }
+
+      .hamburger {
+        display: none;
+      }
+
+      @media screen and (max-width: 375px) {
+        aside {
+          display: none;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .ham {
+          width: 25px;
+          height: 1px;
+          margin: 10px 0px 0px 10px;
+          border: none;
+          border-top: 1px solid #000;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="base-container">
+      <div class="base-nav">
+        <div class="hamburger">
+          <hr class="ham" />
+          <hr class="ham" />
+          <hr class="ham" />
+        </div>
+        <aside>
+          <div class="base-title-container">
+            <h1 class="base-title">Calco</h1>
+            <hr class="base-line" />
+          </div>
+
+          <ul class="base-ul">
+            <li class="base-link">
+              <a href="{% url 'about' %}" class="base-a about">About</a>
+            </li>
+            <li class="base-link">
+              <a href="{% url 'calc' %}" class="base-a calculator"
+                >Calculator</a
+              >
+            </li>
+            <li class="base-link">
+              <a href="{% url 'compound' %}" class="base-a compound"
+                >Compound</a
+              >
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+
+    {% block content %}
+    <h1>Create a block</h1>
+    {% endblock %}
+  </body>
+</html>

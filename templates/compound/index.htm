@@ -1,0 +1,166 @@
+{% extends 'base.htm' %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% block head %}
+    <title>Calco | Compound</title>
+    <style>
+      .form {
+        width: 700px;
+        position: absolute;
+        display: grid;
+        grid-gap: 20px;
+        left: 450px;
+        top: 100px;
+        grid-template-columns: 2;
+      }
+      .answer {
+        position: absolute;
+        width: 500px;
+        left: 0px;
+        top: 425px;
+        border-radius: 10px;
+        border: #000 solid 2px;
+        height: 35px;
+      }
+
+      .text {
+        text-align: center;
+      }
+
+      .forms {
+        margin-bottom: 50px;
+        width: 500px;
+        border-radius: 30px;
+        border: #000 solid 2px;
+        height: 35px;
+        text-align: center;
+      }
+
+      .forms::-webkit-input-placeholder {
+        text-align: center;
+        font-size: 15px;
+      }
+
+      .btn {
+        text-align: center;
+        position: relative;
+        left: 125px;
+        width: 250px;
+        cursor: pointer;
+        background-color: #fff;
+      }
+
+      .period-time {
+        border-radius: 30px;
+        border: #000 solid 2px;
+      }
+
+      .topup-time {
+        border-radius: 30px;
+        border: #000 solid 2px;
+      }
+
+      @media screen and (max-width: 940px) {
+        .form {
+          width: 700px;
+          position: absolute;
+          transition: ease 500ms;
+          display: grid;
+          grid-gap: 20px;
+          left: 250px;
+          top: 100px;
+          grid-template-columns: 2;
+        }
+      }
+
+      @media screen and (max-width: 640px) {
+        .form {
+          width: 700px;
+          position: absolute;
+          transition: ease 500ms;
+          display: grid;
+          grid-gap: 20px;
+          left: 50px;
+          top: 100px;
+          grid-template-columns: 2;
+        }
+
+        aside {
+          display: none;
+          transition: ease 300ms;
+        }
+      }
+    </style>
+    {% endblock %}
+  </head>
+  <body>
+    {% block content %}
+    <div class="container">
+      <div class="form">
+        <form>
+          <div class="inner">
+            <input
+              type="number"
+              class="start-amount forms"
+              placeholder="Start Amount"
+            />
+            <input type="number" class="period forms" placeholder="Period" />
+            <select name="period-time" class="period-time">
+              <option value="years">Years</option>
+              <option value="months">Months</option>
+            </select>
+            <input type="number" class="rate forms" placeholder="Rate" />
+            <input type="number" class="topup forms" placeholder="Top Up" />
+            <select name="topup-time" class="topup-time">
+              <option value="months">Months</option>
+              <option value="weekly">Weekly</option>
+            </select>
+            <input type="button" class="btn forms" value="Calculate" />
+          </div>
+        </form>
+
+        <div class="answer">
+          <h3 class="text">£0</h3>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let btn = document.querySelector(".btn");
+
+      btn.addEventListener("click", e => {
+        let start = document.querySelector(".start-amount").value;
+        let period = document.querySelector(".period").value;
+        let period_time = document.querySelector(".period-time").value;
+        let rate = document.querySelector(".rate").value;
+        let topup = document.querySelector(".topup").value;
+        let topup_time = document.querySelector(".topup-time").value;
+        let answer = document.querySelector(".text");
+        start = parseFloat(start);
+        period = parseInt(period);
+        rate = parseInt(rate);
+        topup = parseFloat(topup);
+
+        if (period_time == "years") {
+          if (topup_time == "months") {
+            let topups_x = 12 * period;
+
+            for (let j = 0; j < period; j++) {
+              for (let i = 0; i < topups_x; i++) {
+                start += topup;
+              }
+              start = start / (100 - rate / 100);
+              start *= 100;
+            }
+
+            answer.innerHTML = `£${Math.round(start * 100) / 100}`;
+          }
+        }
+      });
+    </script>
+    {% endblock %}
+  </body>
+</html>

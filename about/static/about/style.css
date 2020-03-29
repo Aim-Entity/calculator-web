@@ -1,0 +1,48 @@
+.left {
+  position: absolute;
+  width: 470px;
+  height: 360px;
+  left: 346px;
+  top: 61px;
+
+  background: linear-gradient(
+    180deg,
+    #f18928 0%,
+    rgba(241, 137, 40, 0.75) 100%
+  );
+  border-radius: 50px;
+}
+
+.right {
+  position: absolute;
+  width: 470px;
+  height: 360px;
+  left: 850px;
+  top: 61px;
+
+  background: linear-gradient(
+    180deg,
+    #f18928 0%,
+    rgba(241, 137, 40, 0.75) 100%
+  );
+  border-radius: 50px;
+}
+
+.right-text {
+  color: pink;
+}
+
+.bottom {
+  position: absolute;
+  width: 970px;
+  height: 301px;
+  left: 346px;
+  top: 512px;
+
+  background: linear-gradient(
+    180deg,
+    #f18928 0%,
+    rgba(241, 137, 40, 0.75) 100%
+  );
+  border-radius: 50px;
+}
